@@ -1,0 +1,80 @@
+{
+  "name": "stream-manager",
+  "version": "1.0.0",
+  "description": "An Electron application for managing streaming efficiently made by @vermino",
+  "main": "dist/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "concurrently \"npm run dev:vite\" \"npm run dev:electron\"",
+    "dev:vite": "vite",
+    "dev:electron": "tsc && cross-env NODE_ENV=development electron .",
+    "build": "npm run build:vite && npm run build:electron",
+    "build:vite": "vite build",
+    "build:electron": "tsc && electron-builder",
+    "build:mac": "npm run build:vite && tsc && electron-builder --mac",
+    "dist": "npm run build:vite && tsc && electron-builder --publish=never",
+    "compile": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "appId": "com.streammanager.app",
+    "productName": "SRT Stream Manager",
+    "mac": {
+      "category": "public.app-category.video",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/my-custom-icon.icns",
+      "darkModeSupport": true
+    },
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*",
+      "!node_modules/.cache/**/*"
+    ],
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "extraResources": [
+      {
+        "from": "/opt/homebrew/bin/srt-live-transmit",
+        "to": "srt-live-transmit"
+      }
+    ]
+  },
+  "keywords": [
+    "electron",
+    "streaming",
+    "manager"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "latest",
+    "concurrently": "^8.0.0",
+    "cross-env": "^7.0.3",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.0.0",
+    "typescript": "^5.0.0",
+    "vite": "latest"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "@mui/icons-material": "^5.0.0",
+    "@mui/material": "^5.0.0",
+    "lucide-react": "^0.518.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
