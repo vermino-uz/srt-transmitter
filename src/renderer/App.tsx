@@ -168,18 +168,7 @@ interface SRTStream {
   pid?: number;
 }
 
-const DEFAULT_STREAMS: SRTStream[] = [
-  { id: '1', alias: 'Camera 1', localIP: '192.168.0.101', localPort: 5001, serverPort: 6001, passphrase: '1234567890', isRunning: false, status: 'Stopped' },
-  { id: '2', alias: 'Camera 2', localIP: '192.168.0.102', localPort: 5002, serverPort: 6002, passphrase: '1234567890', isRunning: false, status: 'Stopped' },
-  { id: '3', alias: 'Camera 3', localIP: '192.168.0.103', localPort: 5003, serverPort: 6003, passphrase: '1234567890', isRunning: false, status: 'Stopped' },
-  { id: '4', alias: 'Camera 4', localIP: '192.168.0.104', localPort: 5004, serverPort: 6004, passphrase: '1234567890', isRunning: false, status: 'Stopped' },
-  { id: '5', alias: 'Camera 5', localIP: '192.168.0.105', localPort: 5005, serverPort: 6005, passphrase: '1234567890', isRunning: false, status: 'Stopped' },
-  { id: '6', alias: 'Camera 6', localIP: '192.168.0.106', localPort: 5006, serverPort: 6006, passphrase: '1234567890', isRunning: false, status: 'Stopped' },
-  { id: '7', alias: 'Camera 7', localIP: '192.168.0.107', localPort: 5007, serverPort: 6007, passphrase: '', isRunning: false, status: 'Stopped' },
-  { id: '8', alias: 'Camera 8', localIP: '192.168.0.108', localPort: 5008, serverPort: 6008, passphrase: '', isRunning: false, status: 'Stopped' },
-  { id: '9', alias: 'Camera 9', localIP: '192.168.0.109', localPort: 5009, serverPort: 6009, passphrase: '', isRunning: false, status: 'Stopped' },
-  { id: '10', alias: 'Camera 10', localIP: '192.168.0.110', localPort: 5010, serverPort: 6010, passphrase: '', isRunning: false, status: 'Stopped' },
-];
+const DEFAULT_STREAMS: SRTStream[] = [];
 
 const SERVER_IP = '100.73.246.9';
 const SERVER_PUBLIC_IP = '100.73.246.9';
